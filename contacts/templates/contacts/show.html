@@ -1,0 +1,22 @@
+<h1>{{ contact.name }}</h1>
+<ul>
+  <li>{{ contact.email }}</li>
+  <li>{{ contact.telephone }}</li>
+</ul>
+
+<form action="{% url 'contacts:show' contact.id 'html'%}" method="post">
+  <!-- contacts/34.html -->
+  {% csrf_token %}
+  <input type="text" name="method" value="DELETE" style="display: none">
+  <input type="submit" value="Delete">
+</form>
+<form action="{% url 'contacts:show' contact.id 'json'%}" method="post">
+  <!-- contacts/34.html -->
+  {% csrf_token %}
+  <input type="text" name="method" value="DELETE" style="display: none">
+  <input type="submit" value="Delete (json)">
+</form>
+<form action="{% url 'contacts:edit' contact.id%}">
+  {% csrf_token %}
+  <input type="submit" value="Edit">
+</form>

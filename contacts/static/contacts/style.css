@@ -1,0 +1,25 @@
+/*html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+body {
+    background: white url("images/doodles.png") repeat right bottom;
+}
+
+.article {
+  background-color: #22d18d;
+  width: 700px;
+  margin: 0 auto;
+  height: 100%;
+}*/

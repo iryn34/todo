@@ -1,0 +1,20 @@
+<h1>{{ task.title }}</h1>
+<ul>
+  <li>{{ task.description }}</li>
+  <li>{{ assignee.name }}</li>
+  <li>{{ task.status }}</li>
+
+</ul>
+
+<form action="{% url 'tasks:show' task.id%}" method="post">
+  {% csrf_token %}
+  <input type="text" name="list_id" value="{{ task.list_id }}" style="display: none">
+  <input type="text" name="method" value="DELETE" style="display: none">
+  <input type="submit" value="Delete">
+</form>
+
+<form action="{% url 'tasks:edit' task.id%}">
+  {% csrf_token %}
+  <!-- <input type="text" name="list_id" value="{{ task.list_id }}" style="display: none"> -->
+  <input type="submit" value="Update">
+</form>

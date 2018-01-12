@@ -1,0 +1,10 @@
+<h1>Add a new list</h1>
+
+<!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
+
+<form action="{% url 'lists:index' %}" method="post">
+  {% csrf_token %}
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title">
+  <input type="submit" value="Add" />
+</form>

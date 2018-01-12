@@ -1,0 +1,12 @@
+{% if list_list %}
+    <ul>
+    {% for list in list_list %}
+        <!-- <li><a href="/contacts/{{ contact.id }}/">{{ contact.name }}</a></li> -->
+        <li><a href="{% url 'lists:show' list.id %}">{{ list.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No lists are available.</p>
+{% endif %}
+
+<a href="{% url 'lists:new' %}">Add a new list</a>

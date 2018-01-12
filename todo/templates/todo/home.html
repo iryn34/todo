@@ -1,0 +1,9 @@
+<form action="{% url 'contacts:index' 'html'%}">
+  <!-- '/contacts.html' -->
+  {% csrf_token %}
+  <input type="submit" value="My contacts">
+</form>
+<form action="{% url 'lists:index' %}">
+  {% csrf_token %}
+  <input type="submit" value="My lists">
+</form>

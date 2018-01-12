@@ -1,0 +1,17 @@
+<h1>Editing a contact</h1>
+
+<!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
+
+<form action="{% url 'contacts:show' contact.id 'html'%}" method="post">
+  {% csrf_token %}
+  <label for="name">Name</label>
+  <input type="text" id="name" name="name" value="{{ contact.name }}">
+  <label for="email">Email</label>
+  <input type="text" id="email" name="email" value="{{ contact.email }}">
+  <label for="password">Password</label>
+  <input type="text" id="password" name="password" value="{{ contact.password }}">
+  <label for="telephone">Telephone</label>
+  <input type="text" id="telephone" name="telephone" value="{{ contact.telephone }}">
+  <input type="submit" value="Edit" />
+  <input type="text" name="method" value="PUT" style="display: none">
+</form>

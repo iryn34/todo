@@ -1,0 +1,11 @@
+<h1>Editing a list</h1>
+
+<!-- {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} -->
+
+<form action="{% url 'lists:show' list.id %}" method="post">
+  {% csrf_token %}
+  <label for="title">Title</label>
+  <input type="text" id="title" name="title" value="{{ list.title }}">
+  <input type="submit" value="Edit" />
+  <input type="text" name="method" value="PUT" style="display: none">
+</form>
